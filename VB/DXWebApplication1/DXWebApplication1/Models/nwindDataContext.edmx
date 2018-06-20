@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Nwind_SalesDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\PROJECTS\DXWEBAPPLICATION1\DXWEBAPPLICATION1\APP_DATA\NWIND_SALESDATA.MDF.dbo.SalesPerson' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SalesPerson">
+          <Key>
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="ProductName" />
+            <PropertyRef Name="CategoryName" />
+            <PropertyRef Name="UnitPrice" />
+            <PropertyRef Name="Quantity" />
+            <PropertyRef Name="Discount" />
+            <PropertyRef Name="SalesPerson" />
+          </Key>
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="Country" Type="nvarchar" MaxLength="15" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="CategoryName" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="OrderDate" Type="datetime" />
+          <Property Name="UnitPrice" Type="smallmoney" Nullable="false" />
+          <Property Name="Quantity" Type="smallint" Nullable="false" />
+          <Property Name="Discount" Type="real" Nullable="false" />
+          <Property Name="ExtendedPrice" Type="money" />
+          <Property Name="SalesPerson" Type="nvarchar" MaxLength="31" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Nwind_SalesDataModelStoreContainer">
+          <EntitySet Name="SalesPerson" EntityType="Self.SalesPerson" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SalesPerson].[OrderID] AS [OrderID], 
+    [SalesPerson].[Country] AS [Country], 
+    [SalesPerson].[FirstName] AS [FirstName], 
+    [SalesPerson].[LastName] AS [LastName], 
+    [SalesPerson].[ProductName] AS [ProductName], 
+    [SalesPerson].[CategoryName] AS [CategoryName], 
+    [SalesPerson].[OrderDate] AS [OrderDate], 
+    [SalesPerson].[UnitPrice] AS [UnitPrice], 
+    [SalesPerson].[Quantity] AS [Quantity], 
+    [SalesPerson].[Discount] AS [Discount], 
+    [SalesPerson].[ExtendedPrice] AS [ExtendedPrice], 
+    [SalesPerson].[SalesPerson] AS [SalesPerson]
+    FROM [dbo].[SalesPerson] AS [SalesPerson]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Nwind_SalesDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="SalesPerson">
+          <Key>
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="ProductName" />
+            <PropertyRef Name="CategoryName" />
+            <PropertyRef Name="UnitPrice" />
+            <PropertyRef Name="Quantity" />
+            <PropertyRef Name="Discount" />
+            <PropertyRef Name="SalesPerson1" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="Country" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProductName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CategoryName" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OrderDate" Type="DateTime" Precision="3" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+          <Property Name="Quantity" Type="Int16" Nullable="false" />
+          <Property Name="Discount" Type="Single" Nullable="false" />
+          <Property Name="ExtendedPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SalesPerson1" Type="String" MaxLength="31" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Nwind_SalesDataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SalesPersons" EntityType="Self.SalesPerson" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Nwind_SalesDataModelStoreContainer" CdmEntityContainer="Nwind_SalesDataEntities">
+          <EntitySetMapping Name="SalesPersons">
+            <EntityTypeMapping TypeName="Nwind_SalesDataModel.SalesPerson">
+              <MappingFragment StoreEntitySet="SalesPerson">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="ExtendedPrice" ColumnName="ExtendedPrice" />
+                <ScalarProperty Name="SalesPerson1" ColumnName="SalesPerson" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
