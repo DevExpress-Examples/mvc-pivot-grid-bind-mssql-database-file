@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Projects\DXWebApplication1\DXWebApplication1\Models\nwindDataContext.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\_QS\_examples\New Bindings\MVC\mvc-pivot-grid-bind-mssql-database-file\CS\DXWebApplication1\DXWebApplication1\Models\nwindDataContext.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
