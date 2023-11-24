@@ -11,8 +11,8 @@ This example illustrates how to add the [ASP.NET MVC PivotGrid](https://docs.dev
 
 ## Files to Review
 
-* [Index.cshtml](CS/DXWebApplication1/DXWebApplication1/Views/Home/Index.cshtml)
-* [_PivotGridPartial.cshtml](CS/DXWebApplication1/DXWebApplication1/Views/Home/_PivotGridPartial.cshtml)
+* [Index.cshtml](./CS/DXWebApplication1/DXWebApplication1/Views/Home/Index.cshtml)
+* [_PivotGridPartial.cshtml](./CS/DXWebApplication1/DXWebApplication1/Views/Home/_PivotGridPartial.cshtml)
  
 ## Documentation
 
